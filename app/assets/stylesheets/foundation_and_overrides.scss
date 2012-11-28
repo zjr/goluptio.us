@@ -26,8 +26,8 @@
 // Font Settings
 
 // $fontSmoothing: antialiased;
-// $headerFontFamily: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-// $headerFontWeight: bold;
+$headerFontFamily: "Open Sans", sans-serif;
+$headerFontWeight: 500;
 // $headerFontStyle: normal;
 // $headerFontColor: #222;
 // $bodyFontFamily: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
@@ -235,7 +235,6 @@
 // Modular Scale Settings
 
 // $ratio: $golden; // THIS IS DEFAULT IN MODULAR-SCALE
-// $baseFontSize: 14px;
 // $importantModNum: 44px;
 // $base-size: $baseFontSize $importantModNum;
 // Produced the following list of values: 14, 17, 23, 27, 37, 44, 59, 71, 95, 115;
