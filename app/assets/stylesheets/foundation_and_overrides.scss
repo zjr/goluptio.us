@@ -26,8 +26,9 @@
 // Font Settings
 
 // $fontSmoothing: antialiased;
-$headerFontFamily: "Open Sans", sans-serif;
-$headerFontWeight: 500;
+$headerFontFamily: "Abril Fatface", sans-serif;
+// $headerFontFamily: "Lato", sans-serif;
+$headerFontWeight: 400;
 // $headerFontStyle: normal;
 // $headerFontColor: #222;
 // $bodyFontFamily: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
@@ -241,3 +242,7 @@ $headerFontWeight: 500;
 // http://www.modularscale.com by Tim Brown
 // https://github.com/scottkellum/modular-scale by scottkellum
 @import 'foundation';
+
+body {
+	position: static;
+}

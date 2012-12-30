@@ -15,3 +15,120 @@
  *= require_tree .
  */
  
+@import 'http://fonts.googleapis.com/css?family=Abril+Fatface|Lato:700,900'
+
+body
+	overflow: hidden
+
+.st-container
+	position: absolute
+	width: 100%
+	height: 100%
+	top: 0
+	left: 0
+
+	& > input,
+	& > a
+		position: fixed
+		bottom: 0
+		width: 20%
+		cursor: pointer
+		font-size: 16px
+		height: 80px
+		line-height: 80px
+
+	& > input
+		opacity: 0
+		z-index: 1000
+
+		&:checked
+
+			& + a,
+			&:hover + a
+				// background: #111
+
+		&:hover + a
+			// background: #333
+			&:after
+				// border-bottom-color: #333
+
+
+	& > a
+		z-index: 10
+		font-weight: 700
+		// background: #222
+		color: #222
+		text-align: center
+
+	// &:before
+	// 	content: '.'
+	// 	position: fixed
+	// 	width: 100%
+	// 	height: 34px
+	// 	background: #222
+	// 	z-index: 9
+	// 	bottom: 0
+
+#st-control-1, #st-control-1 + a
+	left: 0
+#st-control-2, #st-control-2 + a
+	left: 20%
+#st-control-3, #st-control-3 + a
+	left: 40%
+	height: 80px
+	img
+		margin: 10px 0
+		width: 50px
+		height: 55px
+#st-control-4, #st-control-4 + a
+	left: 60%
+#st-control-5, #st-control-5 + a
+	left: 80%
+
+.st-scroll,
+.st-panel
+	position: relative
+	width: 100%
+	height: 100%
+
+.st-scroll
+	top: 0
+	left: 0
+	transition: all 0.6s ease-in-out
+	transform: translate3d(0, 0, 0)
+	backface-visibility: hidden
+
+.st-panel
+	background: #fff
+	overflow: hidden
+
+#st-control-1:checked ~ .st-scroll
+	transform: translateY(-100%) 
+#st-control-2:checked ~ .st-scroll
+	transform: translateY(-200%) 
+// 3 for G
+#st-control-3:checked ~ .st-scroll
+	transform: translateY(0%) 
+#st-control-4:checked ~ .st-scroll
+	transform: translateY(-300%) 
+#st-control-5:checked ~ .st-scroll
+	transform: translateY(-400%) 
+
+
+
+.st-container 
+	h2
+		text-transform: capitalize
+		font-size: 112px
+		// text-align: center
+		padding-left: 20px
+		color: #222
+		span
+			font-size: 37px
+	p
+		font-weight: 700
+		font-size: 24px
+		text-transform: uppercase
+		padding: 20px
+
+// #081517
