@@ -1,0 +1,9 @@
+{
+  "name": "golden-grid-system",
+  "version": "0.0.0",
+  "commit": "8cbe9f65f329ea478aadd34bdf46032f3c4c361a",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jonikorpi/Golden-Grid-System.git"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "cssgrid",
+  "version": "0.0.0",
+  "commit": "da5f4c5d1c593c12cafa6e9635849b56322ccd5c",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/andytlr/cssgrid.git"
+  }
+}

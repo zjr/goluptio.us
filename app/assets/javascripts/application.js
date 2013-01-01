@@ -11,21 +11,8 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery_ujs
-//= require_tree .
 //= require prefixfree
 //= require html5-bp-plug
-//= require foundation
-
-// Open Sans load
-WebFontConfig = {
-  google: { families: [ 'Open+Sans:600:latin' ] }
-};
-(function() {
-  var wf = document.createElement('script');
-  wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-    '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-  wf.type = 'text/javascript';
-  wf.async = 'true';
-  var s = document.getElementsByTagName('script')[0];
-  s.parentNode.insertBefore(wf, s);
-})();
+//= require GGS
+//= require_tree ../../../vendor/assets/javascripts/1140gs
+//= require_tree .

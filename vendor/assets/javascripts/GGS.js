@@ -1,0 +1,1 @@
+../../components/golden-grid-system/GGS.js
