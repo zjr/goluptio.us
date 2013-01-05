@@ -25,7 +25,7 @@ namespace :deploy do
   task :start do ; end
   task :stop do ; end
   task :restart, :roles => :app, :except => { :no_release => true } do
-    run "cd #{latest_release} && bundle exec rake assets:precompile"
+#    run "cd #{latest_release} && bundle exec rake assets:precompile"
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
 end
