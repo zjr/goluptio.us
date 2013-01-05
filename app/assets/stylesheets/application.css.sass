@@ -16,12 +16,11 @@
  *= require_tree .
  */
  
-@import 'http://fonts.googleapis.com/css?family=Abril+Fatface|Lato:700,900'
+@import 'http://fonts.googleapis.com/css?family=Abril+Fatface|Lato:400,700,900'
 
 .abril
 	font-family: "Abril Fatface", sans-serif
-	font-weight: 400
-
+	font-weight: 400 
 
 body
 	// overflow: hidden
@@ -30,42 +29,45 @@ body
 	background: #222
 	position: fixed
 	z-index: 500
-	height: 6em
+	height: 4.5em
 	width: 100%
 	top: 0
 
 	& > input,
-	& > a	
-		height: 5em
-		width: 3.125em
+	& > label
+		height: 3em
+		width: 2.625em
 	& > input
 		left: 50%
-		margin-left: -1.5625em
-	& > a
+		margin-left: -1.3125em
+	& > label
 		display: block
-		margin: 0 auto
-	
-	.logo	img
-		padding: 1.2815000000000001em 0
-		width: 3.125em
-		height: 3.4375em
-		opacity: 0.8
-		transition: all 0.25s ease-in-out
-		&:hover
-			opacity: 1
+		margin: 0 auto 1.5em
+		cursor: pointer1
+		&.logo
+			opacity: 0.8
+			transition: all 0.25s ease-in-out
+			&:hover
+				opacity: 0.99
+			img
+				padding: 0.75em 0
+				height: 3em
 
 	& input
 		position: absolute
-		opacity: 0
+		opacity: 0.0
 	
 	span.menu
 		position: absolute
-		width: 3.125em
 		left: 50%
-		margin-left: -1.5625em
-		padding-top: 0.625em
-		height: 2.5em
-		line-height: 2.5em
+		width: 3.5em
+		margin-left: -1.75em
+		font-family: "Lato", sans-serif
+		letter-spacing: 0.1875em
+		text-transform: uppercase
+		text-align: center
+		line-height: 3em
+		font-weight: 400
 		&:hover
 			width: 100%
 			margin: 0
@@ -73,33 +75,39 @@ body
 			left: 0
 			transition: all 50s ease-in-out
 			& + .sub-nav			
-				height: 2.5em
+				height: 3em
 				opacity: 1
-
-
 	.sub-nav
-		padding-top: 0.625em
 		overflow-y: hidden
 		background: #222
-		transition: all 0.2s ease-in-out
 		height: 0
 		opacity: 0
+		transition: all 0.2s ease-in-out
 		&:hover
-			height: 2.5em
+			height: 3em
 			opacity: 1
 		.sub-nav-container
-			width: 18.75em
+			width: 20em
 			margin: 0 auto
 			position: relative
-
 			& > input,
-			& > a
+			& > label
 				display: block
+				height: 3em
 				width: 25%
-				height: 2.5em
-
+				float: left
+			& > label
+				line-height: 3em
+				text-align: center
+				font-family: "Lato", sans-serif
+				color: rgb(23,197,138)
+				position: relative
+				z-index: 10
+				transition: all 0.2s ease-in-out
+				opacity: 0.8
+				&:hover
+					opacity: 1
 			& > input
-				opacity: 0
 				cursor: pointer
 				&:nth-child(1)
 					left: 0%
@@ -109,11 +117,6 @@ body
 					left: 50%
 				&:nth-child(7)
 					left: 75%
-
-			& > a
-				float: left
-				line-height: 2.5em
-				text-align: center
 
 
 .ms-container

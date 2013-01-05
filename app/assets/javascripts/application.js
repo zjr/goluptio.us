@@ -10,12 +10,27 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery_ujs
+//= // require jquery_ujs
 //= require prefixfree
 //= require html5-bp-plug
 //= require GGS
 //= require_tree ../../../vendor/assets/javascripts/1140gs
 //= require_tree .
+
+// Simple 'hammer' method for hi-res
+// courtesy http://css3.bradshawenterprises.com/blog/retina-image-replacement-for-new-ipad/ 
+// -- replace later with a more surgical technique
+// Set pixelRatio to 1 if the browser doesn't offer it up.
+var pixelRatio = !!window.devicePixelRatio ? window.devicePixelRatio : 1;
+$(window).on("load", function() {
+    if (pixelRatio > 1) {
+        $('img').each(function() { 
+            // Very naive replacement that assumes no dots in file names.
+            $(this).attr('src', $(this).attr('src').replace(".","@2x."));
+        });
+    }
+});
+
 
 $(document).ready(function(){
 
