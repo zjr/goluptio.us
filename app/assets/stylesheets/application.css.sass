@@ -11,7 +11,8 @@
  *= require_self
  *= require normalize
  *= require html5-bp-main
- *= require_tree ../../../vendor/assets/stylesheets/1140gs
+ *= //require_tree ../../../vendor/assets/stylesheets/1140gs
+ *= require gol-grid
  *= require_tree .
  */
  
@@ -23,117 +24,150 @@
 
 
 body
-	overflow: hidden
+	// overflow: hidden
+
+#m-nav
+	background: #222
+	position: fixed
+	z-index: 500
+	height: 6em
+	width: 100%
+	top: 0
+
+	& > input,
+	& > a	
+		height: 5em
+		width: 3.125em
+	& > input
+		left: 50%
+		margin-left: -1.5625em
+	& > a
+		display: block
+		margin: 0 auto
+	
+	.logo	img
+		padding: 1.2815000000000001em 0
+		width: 3.125em
+		height: 3.4375em
+		opacity: 0.8
+		transition: all 0.25s ease-in-out
+		&:hover
+			opacity: 1
+
+	& input
+		position: absolute
+		opacity: 0
+	
+	span.menu
+		position: absolute
+		width: 3.125em
+		left: 50%
+		margin-left: -1.5625em
+		padding-top: 0.625em
+		height: 2.5em
+		line-height: 2.5em
+		&:hover
+			width: 100%
+			margin: 0
+			opacity: 0
+			left: 0
+			transition: all 50s ease-in-out
+			& + .sub-nav			
+				height: 2.5em
+				opacity: 1
+
+
+	.sub-nav
+		padding-top: 0.625em
+		overflow-y: hidden
+		background: #222
+		transition: all 0.2s ease-in-out
+		height: 0
+		opacity: 0
+		&:hover
+			height: 2.5em
+			opacity: 1
+		.sub-nav-container
+			width: 18.75em
+			margin: 0 auto
+			position: relative
+
+			& > input,
+			& > a
+				display: block
+				width: 25%
+				height: 2.5em
+
+			& > input
+				opacity: 0
+				cursor: pointer
+				&:nth-child(1)
+					left: 0%
+				&:nth-child(3)
+					left: 25%
+				&:nth-child(5)
+					left: 50%
+				&:nth-child(7)
+					left: 75%
+
+			& > a
+				float: left
+				line-height: 2.5em
+				text-align: center
+
 
 .ms-container
+	box-sizing: border-box
 	position: absolute
-	width: 100%
+	overflow: hidden
 	height: 100%
+	width: 100%
 	top: 0
 	left: 0
 
-	& > input,
-	& > a
-		position: fixed
-		bottom: 0
-		width: 20%
-		cursor: pointer
-		font-size: 16px
-		height: 80px
-		line-height: 80px
-
-	& > input
-		opacity: 0
-		z-index: 1000
-
-		&:checked
-
-			& + a,
-			&:hover + a
-				// background: #111
-
-		&:hover + a
-			// background: #333
-			&:after
-				// border-bottom-color: #333
-
-
-	& > a
-		z-index: 10
-		font-weight: 700
-		// background: #222
-		color: #222
-		text-align: center
-
-	// &:before
-	// 	content: '.'
-	// 	position: fixed
-	// 	width: 100%
-	// 	height: 34px
-	// 	background: #222
-	// 	z-index: 9
-	// 	bottom: 0
-
-#ms-control-1, #ms-control-1 + a
-	left: 0
-#ms-control-2, #ms-control-2 + a
-	left: 20%
-#ms-control-3, #ms-control-3 + a
-	left: 40%
-	height: 80px
-	img
-		margin: 10px 0
-		width: 50px
-		height: 55px
-#ms-control-4, #ms-control-4 + a
-	left: 60%
-#ms-control-5, #ms-control-5 + a
-	left: 80%
-
-.ms-scroll,
+#ms-scroll,
 .ms-panel
 	position: relative
 	width: 100%
 	height: 100%
 
-.ms-scroll
+.ms-panel
+	background: transparent
+	overflow: hidden
+	padding-top: 8.675em
+	box-sizing: border-box
+
+#ms-scroll
 	top: 0
 	left: 0
 	transition: all 0.6s ease-in-out
 	transform: translate3d(0, 0, 0)
 	backface-visibility: hidden
+	&.pos1 // Home
+		transform: translateY(0%)
+	&.pos2
+		transform: translateY(-100%)
+	&.pos3
+		transform: translateY(-200%)
+	&.pos4
+		transform: translateY(-300%)
+	&.pos5
+		transform: translateY(-400%)
+// Positioning fallback for sans-transform
+.no-csstransitions #ms-scroll	
+	&.pos1 // Home
+		top: 0
+	&.pos2
+		top: -100%
+	&.pos3
+		top: -200%
+	&.pos4
+		top: -300%
+	&.pos5
+		top: -400%
 
-.ms-panel
-	background: #fff
-	overflow: hidden
-
-#ms-control-1:checked ~ .ms-scroll
-	transform: translateY(-100%) 
-#ms-control-2:checked ~ .ms-scroll
-	transform: translateY(-200%) 
-// 3 for G
-#ms-control-3:checked ~ .ms-scroll
-	transform: translateY(0%) 
-#ms-control-4:checked ~ .ms-scroll
-	transform: translateY(-300%) 
-#ms-control-5:checked ~ .ms-scroll
-	transform: translateY(-400%) 
-
-
-
-.ms-container 
-	h2
-		text-transform: capitalize
-		font-size: 112px
-		// text-align: center
-		padding-left: 20px
-		color: #222
-		span
-			font-size: 37px
-	p
-		font-weight: 700
-		font-size: 24px
-		text-transform: uppercase
-		padding: 20px
-
-// #081517
+.tester
+	background: black
+	background-clip: content-box
+	height: 7.5em
+	margin-bottom: 1.5em
