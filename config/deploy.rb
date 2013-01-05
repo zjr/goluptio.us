@@ -1,7 +1,5 @@
-require 'bundler/capistrano'
-require 'rvm/capistrano'
-set :rvm_ruby_string, '1.9.3'
-set :rvm_type, :system
+require "bundler/capistrano"
+require "rvm/capistrano"
 
 set :application, "Goluptious"
 set :repository,  "git@github.com:zjr/goluptio.us.git"
@@ -12,7 +10,7 @@ set :scm_passphrase, ""
 set :user, "deploy"
 set :deploy_to, "/home/deploy/sites/glumptio.us"
 
-server "nietzche.zjr.io", :app, :web, :db, :primary => true
+server "nietzche", :app, :web, :db, :primary => true
 
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
@@ -25,7 +23,7 @@ namespace :deploy do
   task :start do ; end
   task :stop do ; end
   task :restart, :roles => :app, :except => { :no_release => true } do
-#    run "cd #{latest_release} && bundle exec rake assets:precompile"
+    run "cd #{latest_release} && bundle exec rake assets:precompile"
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
 end
