@@ -15,6 +15,7 @@
 //= require html5-bp-plug
 //= require GGS
 //= require_tree ../../../vendor/assets/javascripts/1140gs
+//= require fittext
 //= require_tree .
 
 // Simple 'hammer' method for hi-res
@@ -60,3 +61,5 @@ $(document).ready(function(){
 	});
 
 });
+
+$('#gText').fitText(6.1);
