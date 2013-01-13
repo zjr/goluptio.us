@@ -79,8 +79,8 @@ jQuery.extend(jQuery.easing, {
 				max: position.top + $(this).height(),
 				onEnter: function(element, position) {
 					area === "home" ?
-					  Gol.router.navigate("")
-					: Gol.router.navigate("/"+area);
+					  Gol.router.navigate("", {replace: true})
+					: Gol.router.navigate("/"+area, {replace: true});
 				},
 				onLeave: function(element, position) {
 					return true;
