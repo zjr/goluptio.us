@@ -115,6 +115,7 @@ jQuery.extend(jQuery.easing, {
 				this.goTo("work");
 			},
 			goTo: function(e){
+				$("html, body").stop(true,true);
 				this.entry == true ?
 					e === "index" ?
 					  $("html, body").scrollTop(0) && 
@@ -124,10 +125,10 @@ jQuery.extend(jQuery.easing, {
 				:	e === "index" ?
 					  $("html, body").animate({
 					    scrollTop: 0
-					  }, 1800, "easeOutExpo")
+					  }, 1400, "easeOutExpo")
 					: $("html, body").animate({
 					    scrollTop: $("#" + e).offset().top
-					  }, 1800, "easeOutExpo");
+					  }, 1400, "easeOutExpo");
 			}
 		}); 
 	Gol.router = new Gol.Site.Router
