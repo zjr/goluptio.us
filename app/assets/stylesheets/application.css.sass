@@ -33,27 +33,20 @@ body
 	width: 100%
 	top: 0
 
-	& > input,
-	& > label
-		height: 3em
-		width: 2.625em
+	& > .logo
 		margin: 0.75em auto
-		cursor: pointer
-	& > input
+		position: relative
 		left: 50%
+		width: 2.625em
 		margin-left: -1.3125em
-		position: absolute
-		cursor: pointer
-		opacity: 0.0
-	& > label
 		display: block
-		&.logo
-			opacity: 0.8
-			transition: all 0.25s ease-in-out
-			&:hover
-				opacity: 0.99
-			img
-				height: 3em
+		height: 3em
+		opacity: 0.8
+		transition: all 0.25s ease-in-out
+		&:hover
+			opacity: 0.99
+		img
+			height: 3em
 	
 	span.menu
 		position: absolute
@@ -89,14 +82,10 @@ body
 			width: 20em
 			margin: 0 auto
 			position: relative
-			& > input,
-			& > label
-				display: block
+			& > .nav-item
 				height: 3em
 				width: 25%
 				float: left
-				cursor: pointer
-			& > label
 				line-height: 3em
 				text-align: center
 				font-family: "Lato", sans-serif
@@ -107,22 +96,11 @@ body
 				opacity: 0.8
 				&:hover
 					opacity: 1
-			& > input
-				position: absolute
-				opacity: 0
-				&:nth-child(1)
-					left: 0%
-				&:nth-child(3)
-					left: 25%
-				&:nth-child(5)
-					left: 50%
-				&:nth-child(7)
-					left: 75%
 
 .ms-container
 	box-sizing: border-box
 	position: absolute
-	overflow: hidden
+	// overflow: hidden
 	height: 100%
 	width: 100%
 	top: 0
@@ -175,35 +153,12 @@ body
 	height: 7.5em
 	margin-bottom: 1.5em
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Be careful wid dis sonnobitch
 // you know specific dat shit iz?
-#ms-panel-1
-	.bigOleBack
-		background-image: url('gZ.jpg')
-		background-size: cover
-		background-position: 0px 69%
-		position: absolute
-		left: -5.55555555%
-		right: -5.55555555%
-		top: 0
-		bottom: 0
-		z-index: -1
-
+#home
+	background-image: url('gZ.jpg')
+	background-size: cover
+	background-position: 0 0
 	h1 
 		margin: -0.3em 0 0 0
 		font-size: 12em
