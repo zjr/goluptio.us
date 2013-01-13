@@ -16,7 +16,7 @@
 //= require GGS
 //= require_tree ../../../vendor/assets/javascripts/1140gs
 //= require fittext
-//= require jqueryui-effectscore
+//= require jquery-scrollspy
 //= require underscore
 //= require json2
 //= require backbone
@@ -42,11 +42,17 @@
 // Fit text for the giant Tip-Top
 $("#gText").fitText(6.1);
 
+// JQueryUI easeOutExpo easing
+jQuery.extend(jQuery.easing, {
+	easeOutExpo: function(e, t, n, r, i) {
+		return t == i ? n + r : r * (-Math.pow(2, -10 * t / i) + 1) + n
+	}
+});
+
 (function ($) {
 	var Gol = {
 		Model: {},
 		View: {},
-		Router: {},
 		Site: {
 			Router: {}
 		}
@@ -58,11 +64,31 @@ $("#gText").fitText(6.1);
 		},
 		slide: function(e) {
 			e.preventDefault();
-			var path = e.target.pathname;
-			Gol.router.navigate(path, {trigger:true});
+			this.path = e.target.pathname;
+			Gol.router.navigate(this.path, {trigger:true});
 		}
 	});
 	Gol.view = new Gol.View;
+	Gol.Site.ScrollSpy = function(){
+		$('.ms-panel').each(function(i){
+			var position = $(this).position();
+			var area = this.id
+			var stateObj = { section: area }
+			$(this).scrollspy({
+				min: position.top,
+				max: position.top + $(this).height(),
+				onEnter: function(element, position) {
+					area === "home" ?
+					  Gol.router.navigate("")
+					: Gol.router.navigate("/"+area);
+				},
+				onLeave: function(element, position) {
+					return true;
+				}
+			});
+		});
+	};
+	Gol.scrollspy = new Gol.Site.ScrollSpy;
 	Gol.Site.Router = 
 		Backbone.Router.extend({
 			routes: {
@@ -72,6 +98,7 @@ $("#gText").fitText(6.1);
 				"contact": "contact",
 				"work": "work"
 			},
+			entry: 1,
 			index: function(){
 				this.goTo("index");
 			},
@@ -88,15 +115,23 @@ $("#gText").fitText(6.1);
 				this.goTo("work");
 			},
 			goTo: function(e){
-				e === "index" ?
-					$("html, body").animate({
-						scrollTop: 0
-					}, 1800, "easeOutExpo")
-				: $("html, body").animate({
-						scrollTop: $("#" + e).offset().top
-					}, 1800, "easeOutExpo");
+				this.entry == true ?
+					e === "index" ?
+					  $("html, body").scrollTop(0) && 
+					  this.entry--
+					: $(document).ready($("html, body").scrollTop($("#"+e).offset().top)) &&
+					  this.entry--
+				:	e === "index" ?
+					  $("html, body").animate({
+					    scrollTop: 0
+					  }, 1800, "easeOutExpo")
+					: $("html, body").animate({
+					    scrollTop: $("#" + e).offset().top
+					  }, 1800, "easeOutExpo");
 			}
 		}); 
 	Gol.router = new Gol.Site.Router
 	Backbone.history.start({pushState: true});
 })(jQuery);
+
+$(document).ready(function(){$("html, body").stop();});

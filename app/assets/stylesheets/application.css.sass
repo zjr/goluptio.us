@@ -100,7 +100,6 @@ body
 .ms-container
 	box-sizing: border-box
 	position: absolute
-	// overflow: hidden
 	height: 100%
 	width: 100%
 	top: 0
@@ -114,7 +113,6 @@ body
 
 .ms-panel
 	background: transparent
-	// overflow: hidden
 	padding-top: 8.675em
 	box-sizing: border-box
 
@@ -124,28 +122,6 @@ body
 	transition: all 0.6s ease-in-out
 	transform: translate3d(0, 0, 0)
 	backface-visibility: hidden
-	&.pos1 // Home
-		transform: translateY(0%)
-	&.pos2
-		transform: translateY(-100%)
-	&.pos3
-		transform: translateY(-200%)
-	&.pos4
-		transform: translateY(-300%)
-	&.pos5
-		transform: translateY(-400%)
-// Positioning fallback for sans-transform
-.no-csstransitions #ms-scroll	
-	&.pos1 // Home
-		top: 0
-	&.pos2
-		top: -100%
-	&.pos3
-		top: -200%
-	&.pos4
-		top: -300%
-	&.pos5
-		top: -400%
 
 .tester
 	background: #222
