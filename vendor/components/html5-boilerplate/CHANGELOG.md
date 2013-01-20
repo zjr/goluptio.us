@@ -1,8 +1,21 @@
 ### HEAD
 
+### 4.0.3 (12 January, 2013)
+
+* Use 32x32 favicon.ico ([#1286](https://github.com/h5bp/html5-boilerplate/pull/1286)).
+* Remove named function expression in plugins.js ([#1280](https://github.com/h5bp/html5-boilerplate/pull/1280)).
+* Adjust CSS image-replacement code ([#1239](https://github.com/h5bp/html5-boilerplate/issues/1239)).
+* Update HiDPI example media query ([#1127](https://github.com/h5bp/html5-boilerplate/issues/1127)).
+
+### 4.0.2 (9 December, 2012)
+
+* Update placeholder icons.
+* Update to Normalize.css 1.0.2.
+* Update to jQuery 1.8.3.
+
 ### 4.0.1 (20 October, 2012)
 
-* Further improvements to `console` method stubbing ([#1206](https://github.com/h5bp/html5-boilerplate/issues/1206), [#1229](https://github.com/h5bp/html5-boilerplate/pull/1229).
+* Further improvements to `console` method stubbing ([#1206](https://github.com/h5bp/html5-boilerplate/issues/1206), [#1229](https://github.com/h5bp/html5-boilerplate/pull/1229)).
 * Update to jQuery 1.8.2.
 * Update to Modernizr 2.6.2.
 * Minor additions to the documentation.

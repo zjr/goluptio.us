@@ -1,1 +1,1 @@
-../../components/modernizr/modernizr.js
+../../components/sprockets-modernizr/modernizr.js
