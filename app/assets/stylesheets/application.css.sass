@@ -18,6 +18,9 @@
  
 @import 'http://fonts.googleapis.com/css?family=Abril+Fatface|Lato:400,700,900'
 
+$mBGcolor: rgba(34,34,34,1)
+$hLight: rgb(23,197,138)
+
 .abril
 	font-family: "Abril Fatface", sans-serif
 	font-weight: 400 
@@ -26,7 +29,7 @@ body
 	// overflow: hidden
 
 #m-nav
-	background: #222
+	background: $mBGcolor
 	position: fixed
 	z-index: 500
 	height: 4.5em
@@ -59,7 +62,7 @@ body
 		text-align: center
 		line-height: 3em
 		font-weight: 400
-		color: #222
+		color: $mBGcolor
 		&:hover
 			width: 100%
 			margin: 0
@@ -71,7 +74,7 @@ body
 				opacity: 1
 	.sub-nav
 		overflow-y: hidden
-		background: #222
+		background: $mBGcolor
 		height: 0
 		opacity: 0
 		transition: all 0.2s ease-in-out
@@ -89,7 +92,7 @@ body
 				line-height: 3em
 				text-align: center
 				font-family: "Lato", sans-serif
-				color: rgb(23,197,138)
+				color: $hLight
 				text-decoration: none
 				position: relative
 				z-index: 10
@@ -125,12 +128,39 @@ body
 	transform: translate3d(0, 0, 0)
 	backface-visibility: hidden
 
-.tester
-	background: #222
+.block
+	background: $mBGcolor
 	background-clip: content-box
 	margin-top: 0.33em
 	height: 27em
 	margin-bottom: 1.5em
+	&.offset
+		background: transparent
+	&.center
+		float: none
+		margin-left: auto
+		margin-right: auto
+
+.block-header
+	margin: 0
+	color: $hLight
+	font-weight: 400
+	line-height: 2em
+	text-align: center
+	letter-spacing: 2px
+	text-transform: uppercase
+	font-family: "Lato", sans-serif
+	border-bottom: 1px solid $hLight
+
+.block-text
+	margin: 0
+	line-height: 1.5em
+	padding: 1.5em 1.5em 0
+	color: rgba(170,166,169,1)
+	font-family: "Lato", sans-serif
+	&.first
+		margin: 0.375em 0 0
+	
 
 // Be careful wid dis sonnobitch
 // you know specific dat shit iz?
