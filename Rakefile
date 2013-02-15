@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-GoluptioUs::Application.load_tasks
+Gol::Application.load_tasks

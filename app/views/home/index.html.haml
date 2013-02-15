@@ -1,0 +1,33 @@
+#m-nav
+	%a.logo.nav-item{:href => '/'}
+		%img{:src => 'assets/gLogo100.png', :alt => 'Home'}
+	%span.menu Menu
+	.sub-nav
+		.sub-nav-container
+			%a.nav-item{:href => '/about'} About
+			%a.nav-item{:href => '/services'} Services
+			%a.nav-item{:href => '/contact'} Contact
+			%a.nav-item{:href => '/work'} Work
+.ms-container
+	#ms-scroll
+		%section#home{:class => 'ms-panel row'}
+			#gText.noverflow.container
+				%h1#tip.abril Tip&mdash;Top
+				%h2.abril{:id => 'd+d'} design &amp; development
+		%section#about.ms-panel.row.container
+			.threecol.tester
+			.threecol.tester
+			.threecol.tester
+			.threecol.tester
+		%section#services.ms-panel.row.container
+			.fourcol.tester
+			.fourcol.tester
+			.fourcol.tester
+		%section#contact.ms-panel.row.container
+			.sixcol.tester
+			.sixcol.tester
+		%section#work.ms-panel.row.container
+			.twelvecol.tester
+#plx-container
+	%canvas
+	%img#bg{:src => "assets/bb.jpg"}
