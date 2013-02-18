@@ -128,5 +128,68 @@ Gol.Views.Home = Backbone.View.extend({
 			window.addEventListener('resize', this.onResize, false);
 			window.addEventListener('scroll', this.onScroll, false);
 		}
+	},
+	GMap: {
+		initialize: function() {
+			var styles = [
+				{
+					"stylers": [
+						{ "saturation": -100 },
+						{ "lightness": 0 },
+						{ "invert_lightness": true }
+					]
+				},{
+					"featureType": "poi",
+					"stylers": [
+						{ "visibility": "off" }
+					]
+				},{
+					"featureType": "administrative",
+					"elementType": "geometry.stroke",
+					"stylers": [
+						{ "color": "#17c58a" }
+					]
+				}
+			];
+			var styledMap = new google.maps.StyledMapType(styles, {styles: "Goluptious Map"});
+			var mapOptions = {
+				zoom: 5,
+				center: new google.maps.LatLng(41.8, -78.5),
+				disableDefaultUI: true,
+				scrollwheel: false,
+				mapTypeControlOptions: {
+					mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
+				}
+			};
+			var map = new google.maps.Map(document.getElementById("GMap"), mapOptions);
+			map.mapTypes.set('map_style', styledMap);
+			map.setMapTypeId('map_style');
+
+			var flint = new google.maps.LatLng(43.0125, -83.6875);
+			var marker = new google.maps.Marker({
+				position: flint,
+				map: map,
+				title:"Goluptious: Flint, MI"
+			});
+			google.maps.event.addListener(marker, 'click', zoom);
+			var zoomed = false;
+			function zoom(){
+				if (!zoomed) {
+					map.setCenter(marker.getPosition());
+					map.setZoom(12);
+					zoomed = true;
+				} else {
+					map.setCenter(mapOptions.center),
+					map.setZoom(5),
+					zoomed = false;
+				}
+			}
+		},
+		loadScript: function() {
+			var script = document.createElement('script');
+			script.type = 'text/javascript';
+			script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCPKUi9m6cgY0s-wwzVV9RrZDRXyflhQ_U&sensor=false&callback=Gol.home.view.GMap.initialize';
+			document.body.appendChild(script);
+		}
 	}
 });

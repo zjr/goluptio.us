@@ -36,4 +36,5 @@
 		plx.createElements();
 		plx.initListen();
 	Gol.home.view.ScrollSpy();
+	Gol.home.view.GMap.loadScript();
 })(jQuery);
