@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b From:
+  = @message.from
+%p
+  %b Email:
+  = @message.email
+%p
+  %b Company:
+  = @message.company
+%p
+  %b Phone:
+  = @message.phone
+%p
+  %b Content:
+  = @message.content
+
+= link_to 'Edit', edit_message_path(@message)
+\|
+= link_to 'Back', messages_path
