@@ -161,13 +161,40 @@ body
 	&.first
 		margin: 0.375em 0 0
 	
+.contact-form
+	padding-top: 1.5em
+	input, textarea, .submit
+		width: 100%
+		border: none
+		background: #0a0a0a
+		margin-bottom: 1.5em
+		box-sizing: border-box
+		color: rgba(170,166,169,1)
+		font-family: "Lato", sans-serif
+		padding: 0.75em
+		&:focus
+			outline-color: $hLight
+		$placeHolderColor: #666
+		&::-webkit-input-placeholder
+			color: $placeHolderColor
+		&:-ms-input-placeholder
+			color: $placeHolderColor
+		&::-moz-placeholder
+			color: $placeHolderColor
+		&:-moz-placeholder
+			color: $placeHolderColor
+	input
+		height: 3em
+	textarea
+		height: 7.5em
+		resize: none
+	.submit
+		height: 3em
+		color: $hLight
 
 // Be careful wid dis sonnobitch
 // you know specific dat shit iz?
 #home
-	// background-image: url('gZ.jpg')
-	// background-size: cover
-	// background-position: 0 0
 	h1 
 		margin: -0.3em 0 0 0
 		font-size: 12em
