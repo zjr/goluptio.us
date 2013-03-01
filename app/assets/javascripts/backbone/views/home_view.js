@@ -191,5 +191,12 @@ Gol.Views.Home = Backbone.View.extend({
 			script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCPKUi9m6cgY0s-wwzVV9RrZDRXyflhQ_U&sensor=false&callback=Gol.home.view.GMap.initialize';
 			document.body.appendChild(script);
 		}
+	},
+	loadForm: function(){
+		this.formView = new Gol.Views.Messages.NewView({
+			el: $('#form-container'),
+			collection: new Gol.Collections.MessagesCollection()
+		});
+		this.formView.render();
 	}
 });
