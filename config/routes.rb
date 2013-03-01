@@ -52,7 +52,12 @@ Gol::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => 'home#index'
 
-  match '/:slug' => 'home#index', :anchor => ':slug'
+  match '/about' => 'home#index', :anchor => 'about'
+  match '/services' => 'home#index', :anchor => 'services'
+  match '/contact' => 'home#index', :anchor => 'contact'
+  match '/work' => 'home#index', :anchor => 'work'
+
+  match ':action' => 'static#:action'
 
   # See how all your routes lay out with "rake routes"
 
