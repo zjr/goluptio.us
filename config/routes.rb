@@ -57,8 +57,6 @@ Gol::Application.routes.draw do
   match '/contact' => 'home#index', :anchor => 'contact'
   match '/work' => 'home#index', :anchor => 'work'
 
-  match ':action' => 'static#:action'
-
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
