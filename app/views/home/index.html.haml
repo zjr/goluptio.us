@@ -37,28 +37,29 @@
 				#GMap{:style => 'width: 100%; height: 100%'}
 			.sixcol.block
 				%h2.block-header Contact
-				%form.contact-form.container
-					.sixcol 
-						%input{:type => 'text', 
-									 :name => 'name',
-									 :placeholder => 'Name'}
-					.sixcol 
-						%input{:type => 'email',
-									 :name => 'email',
-									 :placeholder => 'Email'}
-					.sixcol 
-						%input{:type => 'text',
-						 			 :name => 'company',
-						 			 :placeholder => 'Company'}
-					.sixcol 
-						%input{:type => 'tel',
-									 :name => 'phone',
-									 :placeholder => 'Contact Number'}
-					.twelvecol 
-						%textarea{:name => 'message',
-											:placeholder => 'Message'}
-					.twelvecol 
-						%button.submit{:type => 'submit'} Submit
+				/
+					%form.contact-form.container
+						.sixcol 
+							%input{:type => 'text', 
+										 :name => 'name',
+										 :placeholder => 'Name'}
+						.sixcol 
+							%input{:type => 'email',
+										 :name => 'email',
+										 :placeholder => 'Email'}
+						.sixcol 
+							%input{:type => 'text',
+							 			 :name => 'company',
+							 			 :placeholder => 'Company'}
+						.sixcol 
+							%input{:type => 'tel',
+										 :name => 'phone',
+										 :placeholder => 'Contact Number'}
+						.twelvecol 
+							%textarea{:name => 'message',
+												:placeholder => 'Message'}
+						.twelvecol 
+							%button.submit{:type => 'submit'} Submit
 		%section#work.ms-panel.row.container
 			.twelvecol.block
 				%h2.block-header Work
